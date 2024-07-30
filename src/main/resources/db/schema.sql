@@ -1,0 +1,26 @@
+-- Drop tables if they exist
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS SeatingChart;
+
+-- Create Employee table
+CREATE TABLE IF NOT EXISTS Employee (
+    EMP_ID CHAR(5) PRIMARY KEY,
+    NAME VARCHAR(100) NOT NULL,
+    EMAIL VARCHAR(100) UNIQUE NOT NULL,
+    FLOOR_SEAT_SEQ INT,
+    CONSTRAINT chk_emp_id CHECK (EMP_ID REGEXP '^[0-9]{5}$')
+);
+
+-- Create Seatingchart table
+CREATE TABLE IF NOT EXISTS Seatingchart (
+    FLOOR_SEAT_SEQ INT PRIMARY KEY AUTO_INCREMENT,
+    FLOOR_NO INT NOT NULL,
+    SEAT_NO INT NOT NULL,
+    UNIQUE KEY (FLOOR_NO, SEAT_NO)
+);
+
+-- Add foreign key constraint
+ALTER TABLE Employee
+ADD CONSTRAINT fk_employee_seating
+FOREIGN KEY (FLOOR_SEAT_SEQ)
+REFERENCES seatingchart(FLOOR_SEAT_SEQ);
