@@ -17,5 +17,10 @@ INSERT INTO Employee (EMP_ID, NAME, EMAIL) VALUES
 ('00002', 'Jane Smith', 'jane.smith@example.com'),
 ('00003', 'Bob Johnson', 'bob.johnson@example.com'),
 ('00004', 'Alice Brown', 'alice.brown@example.com'),
-('00005', 'Charlie Davis', 'charlie.davis@example.com');
+('00005', 'Charlie Davis', 'charlie.davis@example.com'),
+('00006', 'Labron James', 'Labron.James@example.com'),
+('00007', 'Ja Morant', 'Ja.Morant@example.com'),
+('00008', 'James Harden', 'James.Harden@example.com'),
+('00009', 'Wembanyama', 'Wembanyama@example.com');
+
 
